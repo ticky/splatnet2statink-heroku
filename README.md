@@ -18,9 +18,11 @@
 
 1. Go to [your stat.ink profile](https://stat.ink/profile) and copy your API token (you'll need it in the next step!).
 
-1. To log in to stat.ink and your Nintendo account, you'll either need to configure `splatnet2statink` locally and upload its `config.txt` to the root of your Cloudcube, or use `heroku run ./bin/update.sh` and follow the prompts.
+1. To configure `splatnet2statink`, run `heroku run ./bin/update.sh` and follow the prompts in your terminal.
 
 _It's worth noting that the Nintendo Account login URL doesn't copy properly via Heroku's web terminal, so make sure you use the listed `heroku run` command._
+
+_If you've already got `splatnet2statink` fully configured elsewhere, you can upload its `config.txt` your application's Cloudcube instance instead of doing the configuration on Heroku. You can access Cloudcube by running `heroku addons:open cloudcube`. If you've done this correctly, you should see a `/config.txt` entry alongside (not in!) the `/public/` folder._
 
 ## Updates
 
