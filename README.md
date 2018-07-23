@@ -24,4 +24,6 @@ _It's worth noting that the Nintendo Account login URL doesn't copy properly via
 
 ## Updates
 
-This will need periodic updating to sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink). If the submodule gets out of date, you can cd into `splatnet2statink`, pull in the latest changes, commit and push to Heroku.
+This will need periodic updating to sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink).
+
+The revision of the script is pinned in the `requirements.in` file, and once updated needs syncing with `requirements.txt` using `pip-compile` (available from `pip install pip-tools`).
