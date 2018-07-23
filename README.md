@@ -2,29 +2,17 @@
 
 [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink), but running periodically via free Heroku dynos and free S3 storage
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
 ## Setup
-
-Pick from either push-button or manual setup.
-
-### Push-button
-
-Push this button, and follow the prompts: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-### Manual
 
 1. You'll need a Heroku account (with credit card entered, sadly), the Heroku CLI, and a local checkout of this repository.
 
 1. Run these commands:
    ```bash
    heroku create # Create a Heroku application
-   heroku addons:create cloudcube:free # Add Cloudcube (so   we can dump configuration in S3)
-   heroku addons:create scheduler:standard # Add the Heroku   Scheduler (so we can sync periodically)
+   heroku addons:create cloudcube:free # Add Cloudcube (so we can store configuration in S3)
+   heroku addons:create scheduler:standard # Add the Heroku Scheduler (so we can sync periodically)
    git push heroku master # Push the codebase up to Heroku
    ```
-
-### Configuration
 
 1. Run `heroku addons:open scheduler` and create a schedule to run `./bin/update.sh` once an hour.
 
