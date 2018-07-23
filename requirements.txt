@@ -1,2 +1,2 @@
 awscli
-# -r ./splatnet2statink/requirements.txt
+-r /app/splatnet2statink/requirements.txt
