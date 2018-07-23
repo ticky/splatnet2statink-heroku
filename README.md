@@ -1,10 +1,10 @@
-# SplatNet 2 stats.ink on Heroku
+# `splatnet2statink` on Heroku
 
 [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink), but running periodically via free Heroku dynos and free S3 storage
 
 ## Setup
 
-1. You'll need a Heroku account (with credit card entered, sadly), the Heroku CLI, and a local checkout of this repository.
+1. You'll need a [Heroku](http://heroku.com) account (with credit card entered, sadly), the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and a local checkout of this repository.
 
 1. Run these commands:
    ```bash
