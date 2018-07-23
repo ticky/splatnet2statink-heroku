@@ -1,0 +1,2 @@
+awscli
+-r ./splatnet2statink/requirements.txt
