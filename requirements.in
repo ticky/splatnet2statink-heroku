@@ -1,2 +1,2 @@
 awscli
--r ./splatnet2statink/requirements.txt
+-e git+https://github.com/ticky/splatnet2statink.git#eca52da19de4a4219f424e0340ba5a699ee495af#egg=splatnet2statink

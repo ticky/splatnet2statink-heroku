@@ -8,7 +8,7 @@ export CONFIG_PATH="./config"
 aws s3 sync "$AWS_BUCKET" "$CONFIG_PATH"
 
 pushd "$CONFIG_PATH"
-  ../splatnet2statink/splatnet2statink.py -r
+  splatnet2statink -r
 popd
 
 aws s3 sync "$CONFIG_PATH" "$AWS_BUCKET"
