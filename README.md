@@ -1,10 +1,10 @@
-# `splatnet2statink` on Heroku
+# `splatnet2statink`, on Heroku
 
-[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink), but running periodically via free Heroku dynos and free S3 storage
+[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) (a tool for uploading Splatoon 2 battle data to [stat.ink](https://stat.ink)), but running periodically on free Heroku dynos and free S3-based storage
 
 ## Setup
 
-1. You'll need a [Heroku](http://heroku.com) account (with credit card entered, sadly), the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and a local checkout of this repository.
+1. You'll need a [Heroku](http://heroku.com) account (with credit card entered, sadly), the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and a local clone of this repository.
 
 1. Run these commands:
    ```bash
