@@ -2,12 +2,13 @@
 
 export AWS_ACCESS_KEY_ID="$CLOUDCUBE_ACCESS_KEY_ID"
 export AWS_SECRET_ACCESS_KEY="$CLOUDCUBE_SECRET_ACCESS_KEY"
-export AWS_BUCKET=$(basename "$CLOUDCUBE_URL")
+export AWS_BUCKET="s3://cloud-cube/$(basename "$CLOUDCUBE_URL")"
+export CONFIG_PATH="./config"
 
-aws s3 sync "s3://$AWS_BUCKET" ./config
+aws s3 sync "$AWS_BUCKET" "$CONFIG_PATH"
 
-pushd ./config
+pushd "$CONFIG_PATH"
   ../splatnet2statink/splatnet2statink.py -r
 popd
 
-aws s3 sync ./config "s3://$AWS_BUCKET"
+aws s3 sync "$CONFIG_PATH" "$AWS_BUCKET"
