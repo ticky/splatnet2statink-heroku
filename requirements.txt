@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
--e git+https://github.com/ticky/splatnet2statink.git#83acd4618e380d3be0870e30bd12e62f07cefbda#egg=splatnet2statink
+-e git+https://github.com/ticky/splatnet2statink.git@83acd4618e380d3be0870e30bd12e62f07cefbda#egg=splatnet2statink
 awscli==1.15.63
 botocore==1.10.62         # via awscli, s3transfer
 certifi==2018.4.16        # via requests
