@@ -24,7 +24,7 @@ function get_etag_from_headers() {
 
 function get_cache_tag() {
   curl \
-    -I \
+    --head \
     --location \
     "$ZIPBALL_URL" |
   get_etag_from_headers
@@ -34,6 +34,7 @@ function download_latest_code() {
   echo "Downloading the latest code..."
   # Download the zipball
   curl \
+    --silent \
     --location \
     --dump-header "$ZIPBALL_HEAD_FILENAME" \
     -o "$ZIPBALL_FILENAME" \
