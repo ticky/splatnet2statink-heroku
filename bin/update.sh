@@ -61,15 +61,19 @@ echo "Fetching previous state..."
 aws s3 sync "$AWS_BUCKET" "$CACHED_PATH"
 echo "Got my state! Moving into the cached directory..."
 
-pushd "$CACHED_PATH"
+pushd "$CACHED_PATH" > /dev/null
+  echo "Checking for cached code..."
   if [[ ! -f "$ZIPBALL_ETAG_FILENAME" ]]; then
+    echo "No cached code found!"
     download_latest_code
   else
-    STORED_CACHE_TAG="<($ZIPBALL_ETAG_FILENAME)"
+    echo "Cached code found, checking for updates..."
+    STORED_CACHE_TAG="$(<"$ZIPBALL_ETAG_FILENAME")"
     LATEST_CACHE_TAG="$(get_cache_tag)"
 
     # If they don't match, download_latest_code & then store cache tag from it
     if [[ "$STORED_CACHE_TAG" != "$LATEST_CACHE_TAG" ]]; then
+      echo "Updates found!"
       download_latest_code
     fi
   fi
@@ -77,7 +81,7 @@ pushd "$CACHED_PATH"
   echo "Running splatnet2statink..."
   ./splatnet2statink.py -r
   echo "Done!"
-popd
+popd > /dev/null
 
 echo "Pushing fresh state back up..."
 aws s3 sync "$CACHED_PATH" "$AWS_BUCKET"
