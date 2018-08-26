@@ -1,2 +1,0 @@
-awscli
--e git+https://github.com/ticky/splatnet2statink.git@41420c465787167e6303707b612fb80bc444da5d#egg=splatnet2statink
