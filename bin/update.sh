@@ -24,6 +24,7 @@ function get_etag_from_headers() {
 
 function get_cache_tag() {
   curl \
+    --silent \
     --head \
     --location \
     "$ZIPBALL_URL" |
