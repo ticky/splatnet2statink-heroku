@@ -53,6 +53,12 @@ function download_latest_code() {
     -rf \
     ./splatnet2statink-master
 
+  echo "Switching splatnet2statink's self-updater off..."
+  sed \
+    -i.bak \
+    's/if check_for_updates\(\)/if False/' \
+    splatnet2statink.py
+
   echo "Updating cache information..."
   # Store the updated ETag (using the headers from the actual request)
   cat "$ZIPBALL_HEAD_FILENAME" | \
