@@ -26,6 +26,4 @@ _If you've already got `splatnet2statink` fully configured elsewhere, you can up
 
 ## Updates
 
-This will need periodic updating to sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink).
-
-The revision of the script is pinned in the `requirements.in` file, and once updated needs syncing with `requirements.txt` using `pip-compile` (available from `pip install pip-tools`).
+The application will sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) on each invocation. If the requirements installed initially fall out of date, a new deployment will be required.
