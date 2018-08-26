@@ -75,11 +75,13 @@ pushd "$CACHED_PATH" > /dev/null
     if [[ "$STORED_CACHE_TAG" != "$LATEST_CACHE_TAG" ]]; then
       echo "Updates found!"
       download_latest_code
+    else
+      echo "No updates needed!"
     fi
   fi
 
   echo "Running splatnet2statink..."
-  ./splatnet2statink.py -r
+  python ./splatnet2statink.py -r
   echo "Done!"
 popd > /dev/null
 
