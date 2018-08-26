@@ -56,7 +56,7 @@ function download_latest_code() {
   echo "Switching splatnet2statink's self-updater off..."
   sed \
     -i.bak \
-    's/if check_for_updates\(\)/if False/' \
+    's/if check_for_updates/if False or check_for_updates/' \
     splatnet2statink.py
 
   echo "Updating cache information..."
