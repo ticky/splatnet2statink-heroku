@@ -1,15 +1,15 @@
 # `splatnet2statink`, on Heroku
 
-[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) (a tool for uploading Splatoon 2 battle data to [stat.ink](https://stat.ink)), but running periodically on free Heroku dynos and free S3-based storage
+[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) (a tool for uploading Splatoon 2 battle data to [stat.ink](https://stat.ink)), running periodically on free Heroku dynos and free S3-based storage
 
 ## Setup
 
-1. You'll need a [Heroku](http://heroku.com) account (with credit card entered, sadly), the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and a local clone of this repository.
+1. You'll need a [Heroku](http://heroku.com) account (with credit card entered), the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and a local clone of this repository.
 
 1. Run these commands:
    ```bash
    heroku create # Create a Heroku application
-   heroku addons:create cloudcube:free # Add Cloudcube (so we can store configuration in S3)
+   heroku addons:create cloudcube:free # Add Cloudcube (so we can cache stuff in S3)
    heroku addons:create scheduler:standard # Add the Heroku Scheduler (so we can sync periodically)
    git push heroku master # Push the codebase up to Heroku
    ```
@@ -26,4 +26,4 @@ _If you've already got `splatnet2statink` fully configured elsewhere, you can up
 
 ## Updates
 
-The application will sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) on each invocation. If the requirements installed initially fall out of date, a new deployment will be required.
+The application will sync with [splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) on each invocation. Due to the way Heroku's slug system works, if requirements installed initially fall out of date, a fresh deployment will be required.
