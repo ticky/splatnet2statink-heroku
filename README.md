@@ -1,6 +1,6 @@
 # `splatnet2statink`, on Heroku
 
-[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) (a tool for uploading Splatoon 2 battle data to [stat.ink](https://stat.ink)), running periodically on free Heroku dynos and free S3-based storage
+[splatnet2statink](https://github.com/frozenpandaman/splatnet2statink) (a tool for uploading Splatoon 2 battle and Salmon Run shift data to [stat.ink](https://stat.ink)), running periodically on free Heroku dynos and free S3-based storage
 
 ## Setup
 
@@ -23,6 +23,10 @@
 _It's worth noting that the Nintendo Account login URL doesn't copy properly via Heroku's web terminal, so make sure you use the listed `heroku run` command._
 
 _If you've already got `splatnet2statink` fully configured elsewhere, you can upload its `config.txt` your application's Cloudcube instance instead of doing the configuration on Heroku. You can access Cloudcube by running `heroku addons:open cloudcube`. If you've done this correctly, you should see a `/config.txt` entry alongside (not in!) the `/public/` folder._
+
+## Salmon Run
+
+Salmon Run shifts are automatically uploaded. To disable this behaviour, you'll need to fork this repository and edit `./bin/update.sh`.
 
 ## Updates
 

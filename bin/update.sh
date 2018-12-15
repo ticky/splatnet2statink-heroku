@@ -88,8 +88,12 @@ pushd "$CACHED_PATH" > /dev/null
     fi
   fi
 
-  echo "Running splatnet2statink..."
+  echo "Running splatnet2statink for recent battles..."
   python ./splatnet2statink.py -r
+  echo "Done!"
+
+  echo "Running splatnet2statink for recent Salmon Run shifts..."
+  python ./splatnet2statink.py --salmon -r
   echo "Done!"
 popd > /dev/null
 
