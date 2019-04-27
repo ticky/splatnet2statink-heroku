@@ -5,7 +5,11 @@
   "packageRules": [
     {
       "packageNames": ["awscli"],
-      "extends": ["schedule:weekends"]
+      "extends": ["schedule:weekends"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
     }
   ]
 }
