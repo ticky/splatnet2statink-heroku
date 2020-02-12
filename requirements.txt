@@ -1,2 +1,2 @@
-awscli==1.17.9
+awscli==1.17.15
 -r https://github.com/frozenpandaman/splatnet2statink/raw/master/requirements.txt
